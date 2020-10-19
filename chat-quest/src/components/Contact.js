@@ -17,8 +17,20 @@ class Contact extends React.Component {
             <div>
                 <h4 className="name">{this.props.name}</h4>
                 <div className="status">
-                    <div className={this.props.online ?'status-online' : 'status-offline'}></div>
-                    <p className="status-text">{this.props.online ?"Online" : "Offline"}</p>   
+                    <div className={this.state.online ?'status-online' : 'status-offline'}
+                        onClick={event =>{
+                            const newOnline = !this.state.online;
+                            this.setState({online:newOnline})
+                        }}
+                    >
+                    </div>
+                    <p className="status-text"    
+                        onClick={event =>{
+                            const newOnline = !this.state.online;
+                            this.setState({online:newOnline})
+                        }}
+                    >{this.state.online ?"Online" : "Offline"}
+                    </p>   
                 </div>
             </div>
             </div>
